@@ -1,5 +1,6 @@
 // @ts-check
 import { chromium, defineConfig, devices } from '@playwright/test';
+import { worker } from 'node:cluster';
 import { trace } from 'node:console';
 
 
