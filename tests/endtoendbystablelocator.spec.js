@@ -21,7 +21,8 @@ test('@Webst Client App login', async ({ page }) => {
    await page.getByRole("listitem").getByRole('button',{name:"Cart"}).click();
  
    //await page.pause();
-   await page.locator("div li").first().waitFor();
+   await page.waitForLoadState('networkidle');
+   //await page.locator("div li").first().waitFor();
    await expect(page.getByText("ZARA COAT 3")).toBeVisible();
  
    await page.getByRole("button",{name :"Checkout"}).click();
